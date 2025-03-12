@@ -1,1 +1,108 @@
-# VisAH
+<h1 align="center">Learning to Highlight Audio by Watching Movies</h1>
+<h5 align="center" style="color:gray">
+  Chao Huang, Ruohan Gao, J. M. F. Tsang, Jan Kurcius, Cagdas Bilen, Chenliang Xu, Anurag Kumar, Sanjeel Parekh<br></h5>
+<h5 align="center" style="color:gray">
+  University of Rochester, University of Maryland College Park, Meta Reality Labs Research
+</h5>
+<h5 align="center"> If our project helps you, please give us a star ⭐ on GitHub to support us. </h5>
+
+<h5 align="center">
+<a href="https://wikichao.github.io/VisAH/"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=red" height=20.5></a>  <a href=""><img src="https://img.shields.io/badge/arXiv-VisAH-b31b1b.svg" height=20.5></a>
+</h5>
+
+## 📰 News
+
+* **[2025.03]** 🔥🔥 Released training and evaluation codes for VisAH.
+
+## 🛠️ Installation
+Clone the repository and create a conda environment:
+```bash
+git clone https://github.com/WikiChao/VisAH.git
+conda create --name VisAH python=3.10
+conda activate VisAH
+```
+
+Install dependencies:
+```bash
+git clone https://github.com/facebookresearch/ImageBind.git
+cd ImageBind
+pip install .
+cd ..
+python -m pip install lightning==2.3.0
+pip install -U tensorboardX
+pip install hear21passt
+python3 -m pip install -U demucs
+```
+
+## 🤖 Dataset
+
+### 1. Download "The Muddy Mix" Dataset
+
+We have prepared all data and features needed to reproduce the training and evaluation process described in our paper.
+
+Download the dataset and place it in the ``visah/data/`` folder.
+
+**Directory structure**:
+  ```
+Muddy_Mix
+├── _2EQFo-vIH0
+|   ├── sub-video
+│   |   ├── _2EQFo-vIH0_000
+│   |   |     ├──audio_raw                     # Ground truth movie audio
+│   |   |     |   ├──_2EQFo-vIH0_000.wav
+│   |   |     ├──frames                        # Video frames
+│   |   |     |   ├──001.png
+│   |   |     |   ├──...
+│   |   |     ├──frames_feats                  # Extracted visual features
+│   |   |     |   ├──visual_feats.pt
+│   |   |     ├──frames_captions               # Extracted textual features
+│   |   |     |   ├──InternVL2-8B_prompt1_feats.pt
+│   |   |     ├──remix_global                  # Mixed audio data
+│   |   |     |   ├──...
+│   |   |     |   ├──target_mix.wav
+│   |   |     ├──separated                     # Separated wav files from original waveform
+  ```
+
+---
+
+### 2. Degradation Method
+We generated the dataset once for the experiments in our paper. However, you can generate additional data for augmentation using the example in ``preprocessing/Degradation_generation.py``.
+
+
+## 🗝️ Training
+
+After setting your dataset path, start training with:
+
+
+```bash
+cd visah
+python run_model.py --config configs/main_config.yaml
+```
+
+## ✅ Evaluation
+
+To evaluate the model:
+1. Set ``mode: test`` in ``configs/main_config.yaml``
+2. Run:
+
+```bash
+python run_model.py --config configs/main_config.yaml
+```
+
+### 🌎 Pretrained model 
+Download our pretrained model checkpoints from [here](https://drive.google.com/drive/folders/16gg4m3EDIdluJ_yonC9pc87dWZibSc9E?usp=sharing).
+
+## 👍 Acknowledgements
+
+We utilized code from the [bandit](https://github.com/kwatcharasupat/bandit) Cinematic Audio Source Separation repository for imperfect separation results generation.
+
+## 📑 Citation
+If you use this code for your research, please cite our work:
+```
+@article{huang2025learning,
+  title={Learning to Highlight Audio by Watching Movies},
+  author={Huang, Chao and Gao, Ruohan and Tsang, J. M. F. and Kurcius, Jan and Bilen, Cagdas and Xu, Chenliang and Kumar, Anurag and Parekh, Sanjeel},
+  journal={},
+  year={2025}
+}
+```

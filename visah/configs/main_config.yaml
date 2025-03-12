@@ -1,0 +1,72 @@
+# Define the model name once for easy modification
+model_name: VContextEnc3 # TContextEnc6, VContextEnc3
+
+# Model Configuration
+model:
+  name: Transformer
+  params:
+    in_channels: 768
+    num_heads: 16
+    d_head: 32
+    depth: 6
+    num_context_encoder_layers: 3
+    context_dim: 768 # 4096 for text encoding, 768 for vision encoding
+
+# Data Configuration
+data:
+  training:
+    num_samples: null
+    batch_size: 12
+  testing:
+    num_samples: null
+    batch_size: 4
+  validation:
+    num_samples: 100
+    batch_size: 4
+  num_workers: 4
+  num_time_frames: 10
+
+# Training Configuration
+training:
+  max_epochs: 200
+  learning_rate: 0.0001
+  devices: [0,1]  # Use [0] for single GPU, [0,1] for multiple GPUs, or 0 for CPU
+  strategy: ddp  # Options: ddp, ddp_find_unused_parameters_true, dp
+  enable_progress_bar: True
+  resume_from_checkpoint: null  # Set path if resuming training
+
+# Logging Configuration
+logging:
+  save_dir: ./experiments/${model_name}/logs
+  name: ${model_name}
+
+# Checkpointing Configuration
+checkpointing:
+  dirpath: ./experiments/${model_name}/checkpoints
+  filename: "${model_name}-{epoch:02d}-{val_loss:.2f}"
+  save_top_k: 3
+  monitor: val_loss
+  mode: min
+
+# Progress Bar Configuration
+progress_bar:
+  refresh_rate: 10
+
+# Testing Configuration
+testing:
+  checkpoint_path: VContextEnc3.ckpt
+  output_dir: ./experiments/${model_name}/test_outputs
+  num_samples: null
+  batch_size: 20
+  num_workers: 4
+
+# Metrics Configuration
+metrics:
+  amplitude:
+    sample_rate: 44100
+    mask_beginning: 0
+    mask_end: 0
+    log: False
+
+# Mode (train/test)
+mode: test
