@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="VisAH">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning to Highlight Audio by Watching Movies</title>
+
+  <style>
+    table audio {
+            width: 100%;
+            max-width: 200px; 
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+    .rainbow {
+  text-align: center;
+  text-decoration: underline;
+  font-size: 32px;
+  font-family: monospace;
+  letter-spacing: 5px;
+}
+.rainbow_text_animated {
+  background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rainbow_animation 6s ease-in-out infinite;
+  background-size: 400% 100%;
+}
+
+@keyframes rainbow_animation {
+  0%,100% {
+      background-position: 0 0;
+  }
+
+  50% {
+      background-position: 100% 0;
+  }
+}
+  </style>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-PYVRSFMDRL"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-PYVRSFMDRL');
+  </script>
+
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/movie.png" type="image/x-icon">
+  <link rel="icon" href="./static/images/favicon.svg">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered">
+        <div class="column has-text-centered">
+          <h1 class="title is-2 publication-title">
+            <span class="rainbow_text_animated" style="vertical-align: middle">Learning to Highlight Audio by Watching Movies</span>
+            </h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><a href="https://wikichao.github.io/" target="_blank">Chao Huang</a><sup style="color:#6fbf73;">1</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://ruohangao.github.io/" target="_blank">Ruohan Gao</a><sup style="color:#6fbf73;">2</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="">J. M. F. Tsang</a><sup style="color:#6fbf73;">3</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="" target="_blank">Jan Kurcius</a><sup style="color:#ed4b82;">3</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://scholar.google.fr/citations?user=6ETBT2AAAAAJ&hl=fr" target="_blank">Cagdas Bilen</a><sup style="color:#ed4b82;">3</sup></span><br>
+              <span class="author-block"><a href="https://www.cs.rochester.edu/~cxu22/" target="_blank">Chenliang Xu</a><sup style="color:#6fbf73;">1</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://anuragkr90.github.io/" target="_blank">Anurag Kumar</a><sup style="color:#2d9ffd;">3</sup></span>&nbsp;&nbsp;
+              <span class="author-block"><a href="https://sanjeelparekh.github.io/" target="_blank">Sanjeel Parekh</a><sup style="color:#2d9ffd;">3</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#6fbf73;">1</sup>University of Rochester</span>&nbsp;&nbsp;
+              <span class="author-block"><sup style="color:#ed4b82">2</sup>The University of Maryland College Park</span>&nbsp;&nbsp;
+              <span class="author-block"><sup style="color:#2d9ffd">3</sup>Meta Reality Labs Research</span>
+            </div>
+            <br>
+          <h2 class="subtitle is-3 publication-subtitle">
+            <span class="author-block" style="color: rgb(170, 99, 99);">CVPR 2025</span>
+          </h2>
+            <div class="column has-text-centered" style="padding-bottom:0;">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href=""
+                     target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href=""
+                     target="_blank"
+                     class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <!-- Code Link. -->
+                <span class="link-block">
+                  <a href="https://github.com/WikiChao/VisAH"
+                     target="_blank" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                        <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    </a>
+                </span>
+              </div>
+            </div>
+            <div class="column has-text-centered">
+              <!-- <h5 class="subtitle is-5">TL;DR</h5> -->
+              <p><b>tl;dr:</b> We introduce a novel task: visually-guided acoustic highlighting, which aims to transform audio to deliver appropriate highlighting effects guided by the accompanying video.</p>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-fifth-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent years have seen a significant increase in video content creation and consumption.
+            Crafting engaging content requires the careful curation of both visual and audio elements. While visual cue curation, through techniques like optimal viewpoint selection or post-editing,
+            has been central to media production, 
+            its natural counterpart, audio, has not undergone equivalent advancements. This often results in a disconnect between visual and acoustic saliency. To bridge this gap, we introduce a novel task: visually-guided acoustic highlighting, which aims to transform audio to deliver appropriate highlighting effects guided by the accompanying video, ultimately creating a more harmonious audio-visual experience. We propose a flexible, transformer-based multimodal framework to solve this task. To train our model, we also introduce a new dataset---the muddy mix dataset, leveraging the meticulous audio and video crafting found in movies,
+            which provides a form of free supervision. We develop a pseudo-data generation process to simulate poorly mixed audio, mimicking real-world scenarios through a three-step process---separation, adjustment, and remixing. Our approach consistently outperforms several baselines in both quantitative and subjective evaluation. We also systematically study the impact of different types of contextual guidance and difficulty levels of the dataset.
+          </p>
+          <img src="./static/teaserv1.png" width="100%" style="display: block; margin: 0 auto;"/>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">&#127909; Comparison to Other Methods</h2>
+          <p> We present examples from our Muddy Mixed Dataset, showcasing the following: the input poorly mixed video, the highlighting results produced by LCE, the outputs from our VisAH model, and the original movie clips for comparison.
+          </p>
+          <br>
+        
+        <!-- Example1. -->
+        <h3 class="title is-4">Example1: Movie "No way out"</h3>
+        <div class="content has-text-justified">
+        </div>
+        <div class="content has-text-centered" style="background-color: #f4fdf3; padding: 20px;"><table style="table-layout:fixed;">
+          <col span="1" style="width: 20%;">
+          <col span="1" style="width: 20%;">
+          <col span="1" style="width: 20%;">
+          <col span="1" style="width: 20%;">
+          <thead>
+            <tr>
+              <th style="text-align: center">Input</th>
+              <th style="text-align: center">LCE</th>
+              <th style="text-align: center">Ours</th>
+              <th style="text-align: center">Original Movie</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="text-align: center">
+                <video src="static/subjective_mv/Input/5GyAcr1BrNA_001.mp4" controls></video>
+              </td>
+              <td style="text-align: center">
+                <video src="static/subjective_mv/LCE/5GyAcr1BrNA_001.mp4" controls></video>
+              </td>
+              <td style="text-align: center">
+                <video src="static/subjective_mv/Ours/5GyAcr1BrNA_001.mp4" controls></video>
+              </td>
+              <td style="text-align: center">
+                <video src="static/subjective_mv/GT/5GyAcr1BrNA_001.mp4" controls></video>
+              </td>
+            </tr>
+            <tr>In the input video, the speech is not highlighted properly, and our model resolve this.</tr>
+          </tbody>
+        </table>
+        </div>
+        <!-- Example1. -->
+        
+        <!-- <br><br> -->
+        
+        <div id="movie">
+          <div class="card">
+            <div class="card-header" id="headingOne">
+              <h5 class="mb-0">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseMovie" aria-expanded="true" aria-controls="collapseMovie">
+                  &#x1F449; Click to fold/unfold more examples.
+                </button>
+              </h5>
+            </div>
+            <div id="collapseMovie" class="collapse" aria-labelledby="headingOne" data-parent="#movie">
+              <div class="card-body">
+              <!-- Example2. -->
+                <!-- Example4 -->
+                <h3 class="title is-4">Example2: Movie "Shooter"</h3>
+                <div class="content has-text-centered" style="background-color: #f4fdf3; padding: 20px;">
+                  <table style="table-layout:fixed;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center">Input</th>
+                        <th style="text-align: center">LCE</th>
+                        <th style="text-align: center">Ours</th>
+                        <th style="text-align: center">Original Movie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Input/AoSA32zQ754_000.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/LCE/AoSA32zQ754_000.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Ours/AoSA32zQ754_000.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/GT/AoSA32zQ754_000.mp4" controls></video>
+                        </td>
+                      </tr>
+                      <tr>In this video, our model highlight the sound effect properly.</tr>
+                    </tbody>
+                  </table>
+                </div>
+                <h3 class="title is-4">Example3: Movie "The Amazing Spider Man"</h3>
+                <div class="content has-text-centered" style="background-color: #f4fdf3; padding: 20px;">
+                  <table style="table-layout:fixed;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center">Input</th>
+                        <th style="text-align: center">LCE</th>
+                        <th style="text-align: center">Ours</th>
+                        <th style="text-align: center">Original Movie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Input/4_23t4NzAMk_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/LCE/4_23t4NzAMk_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Ours/4_23t4NzAMk_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/GT/4_23t4NzAMk_003.mp4" controls></video>
+                        </td>
+                      </tr>
+                      <tr>In this video, our model highlight the speech properly.</tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Example3 -->
+                <h3 class="title is-4">Example4: Movie "Superman III"</h3>
+                <div class="content has-text-centered" style="background-color: #f4fdf3; padding: 20px;">
+                  <table style="table-layout:fixed;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center">Input</th>
+                        <th style="text-align: center">LCE</th>
+                        <th style="text-align: center">Ours</th>
+                        <th style="text-align: center">Original Movie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Input/5gf0f8WioTM_004.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/LCE/5gf0f8WioTM_004.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Ours/5gf0f8WioTM_004.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/GT/5gf0f8WioTM_004.mp4" controls></video>
+                        </td>
+                      </tr>
+                      <tr>In this video, our model highlight the music properly.</tr>
+                    </tbody>
+                  </table>
+                </div>
+                <!-- Example4 -->
+                <h3 class="title is-4">Example5: Movie "Jurassic Park 3"</h3>
+                <div class="content has-text-centered" style="background-color: #f4fdf3; padding: 20px;">
+                  <table style="table-layout:fixed;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <col span="1" style="width: 20%;">
+                    <thead>
+                      <tr>
+                        <th style="text-align: center">Input</th>
+                        <th style="text-align: center">LCE</th>
+                        <th style="text-align: center">Ours</th>
+                        <th style="text-align: center">Original Movie</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Input/2vOhL_Hw-gg_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/LCE/2vOhL_Hw-gg_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/Ours/2vOhL_Hw-gg_003.mp4" controls></video>
+                        </td>
+                        <td style="text-align: center">
+                          <video src="static/subjective_mv/GT/2vOhL_Hw-gg_003.mp4" controls></video>
+                        </td>
+                      </tr>
+                      <tr>In this video, our model highlight the sound effect properly.</tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <br><br>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Application. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">&#9758 Application: V2A Refinement</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our VisAH model has several potential downstream applications, one of which is refining video-to-audio generation. We demonstrate this by using the audio generated by a video-to-audio model as input, along with the corresponding video as guidance. Our VisAH model effectively rebalances the audio sources in alignment with the video, resulting in improved audio-visual coherence. Human evaluations further confirm these enhancements, with preferences favoring the outputs from our model.
+          </p>
+        </div>
+        <img src="./static/v2a.png" width="50%" style="display: block; margin: 0 auto;"/>
+        <br/>
+
+      </div>
+    </div>
+    <!-- / Application. -->
+  </div>
+  <p>
+    <i>Note that the generated videos used in our experiments are sourced from the <a href="https://ai.meta.com/research/movie-gen/">MovieGen</a> website, which already provides high-quality content. All videos are adjusted at the same loudness level. </i>
+  </p>
+  <div class = "table-container">
+    <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+      <thead>
+        <tr>
+          <td scope="col" width=300px>
+            <font color="061E61">MovieGen Video</i></font>
+          </td>
+          <td scope="col" width=300px>
+            <font color="061E61">MovieGen Video + Our Model</font>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">
+            <video src="static/v2a/moviegen/normalized_AQOPSRhPlINHRSMKMJjdm7LaAR3h329xG5jNuPcmfu6kfARzUp5Yeqgm0RA9Wb9oMYJPgP37ZrR91Dw8mqXTJ-2v.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/v2a/moviegen_ours/normalized_AQOPSRhPlINHRSMKMJjdm7LaAR3h329xG5jNuPcmfu6kfARzUp5Yeqgm0RA9Wb9oMYJPgP37ZrR91Dw8mqXTJ-2v.mp4" controls></video>
+            <p>(2~4s) Our method highlights the sound of the skateboard scraping against the slabs.</p>
+          </td>
+        </tr>
+
+        <tr>
+          <td style="text-align: center">
+            <video src="static/v2a/moviegen/normalized_AQMVJRWskddOrnf-VBG9TiU7UvT52Nrzx9RtjEGPLZ3xFHHcFEJ99UrwBsa-zvvDn0JzsB25XYzU42ROH7IQZCYk.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/v2a/moviegen_ours/normalized_AQMVJRWskddOrnf-VBG9TiU7UvT52Nrzx9RtjEGPLZ3xFHHcFEJ99UrwBsa-zvvDn0JzsB25XYzU42ROH7IQZCYk.mp4" controls></video>
+            <p>Our method highlights the sound effects.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p>
+    <i>In the following, the generated videos are from the <a href="https://openai.com/index/sora/">OpenAI Sora</a>, and the corresponding audios for videos are generated by <a href="https://yzxing87.github.io/Seeing-and-Hearing/">Seeing-and-Hearing</a>. </i>
+  </p>
+  <div class = "table-container">
+    <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+      <thead>
+        <tr>
+          <td scope="col" width=300px>
+            <font color="061E61">Seeing-and-Hearing</i></font>
+          </td>
+          <td scope="col" width=300px>
+            <font color="061E61">Seeing-and-Hearing + Our Model</font>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">
+            <video src="static/v2a/seeingandhearing/normalized_cloud-man.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/v2a/seeingandhearing_ours/normalized_cloud-man.mp4" controls></video>
+            <p>Our method highlights the sound effects.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section> 
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <div class="columns is-centered">
+
+    <!-- Application. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">&#9758 Application: Real Video Refinement</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            Our VisAH model can also be applied to real-world videos, where audio is often recorded with suboptimal quality and may require rebalancing. We showcase several examples of real-world videos where the audio is refined by our model. These results highlight the effectiveness of VisAH in enhancing audio quality and aligning it with the video content.
+          </p>
+        </div>
+        <br>
+
+      </div>
+    </div>
+    <!-- / Application. -->
+  </div>
+  <p>
+    <i>The videos are sourced from the AudioCaps dataset. </i>
+  </p>
+  <div class = "table-container">
+    <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
+      <thead>
+        <tr>
+          <td scope="col" width=300px>
+            <font color="061E61">Real Video</i></font>
+          </td>
+          <td scope="col" width=300px>
+            <font color="061E61">Real Video + Our Model</font>
+          </td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td style="text-align: center">
+            <video src="static/web_video/Raw/normalized_0G7rb74R-2A_30.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/web_video/Ours/normalized_0G7rb74R-2A_30.mp4" controls></video>
+            <p>Our method highlights the laughing sound to make the video more immersive.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">
+            <video src="static/web_video/Raw/normalized_IsUG5SKWNZA_30.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/web_video/Ours/normalized_IsUG5SKWNZA_30.mp4" controls></video>
+            <p>Our method highlights the ambient sound to make the video more immersive.</p>
+          </td>
+        </tr>
+        <tr>
+          <td style="text-align: center">
+            <video src="static/web_video/Raw/normalized_JdFmMw0zyKA_0.mp4" controls></video>
+          </td>
+          <td style="text-align: center">
+            <video src="static/web_video/Ours/normalized_JdFmMw0zyKA_0.mp4" controls></video>
+            <p>Our method highlights the people in the video learning the seal's calls.</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section> 
+
+
+
+</body>
+</html>
