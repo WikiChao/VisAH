@@ -12,7 +12,8 @@
 
 ## 📰 News
 
-* **[2025.03]** 🔥🔥 Released training and evaluation codes for VisAH.
+* **[2025.03]** 🔥🔥 Released training and evaluation codes for **VisAH**.
+* **[2025.02]** 🎉🎉 **VisAH** is accepted to **CVPR 2025**.
 
 ## 🛠️ Installation
 Clone the repository and create a conda environment:
