@@ -41,7 +41,18 @@ python3 -m pip install -U demucs
 
 We have prepared all data and features needed to reproduce the training and evaluation process described in our paper.
 
-Download the dataset and place it in the ``visah/data/`` folder.
+#### Download Options:
+
+**Option 1: Base Dataset (Recommended for Quick Start)**
+- Contains essential files: visual features, text features, input audio, and ground truth audio
+- [Download Base Dataset](https://drive.google.com/file/d/1lVqr7zBNaI1AupLz0X7dIWbiC8WULWP4/view?usp=sharing)
+- After downloading, unzip and rename the folder from `Muddy_Mix_base` to `Muddy_Mix`
+- Place it in the `visah/data/` directory
+
+**Option 2: Full Dataset**
+- Contains everything in the base dataset plus extracted frames, separated audios, and original video clips
+- *Coming soon - please stay tuned*
+
 
 **Directory structure**:
   ```
@@ -62,6 +73,7 @@ Muddy_Mix
 │   |   |     |   ├──...
 │   |   |     |   ├──target_mix.wav
 │   |   |     ├──separated                     # Separated wav files from original waveform
+│   |   ├──_2EQFo-vIH0_000.mkv
   ```
 
 ---
