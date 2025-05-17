@@ -200,10 +200,10 @@ We utilized code from the [bandit](https://github.com/kwatcharasupat/bandit) Cin
 ## 📑 Citation
 If you use this code for your research, please cite our work:
 ```
-@article{huang2025learning,
+@inproceedings{huang2025learning,
   title={Learning to Highlight Audio by Watching Movies},
   author={Huang, Chao and Gao, Ruohan and Tsang, J. M. F. and Kurcius, Jan and Bilen, Cagdas and Xu, Chenliang and Kumar, Anurag and Parekh, Sanjeel},
-  journal={},
+  booktitle={CVPR},
   year={2025}
 }
 ```
