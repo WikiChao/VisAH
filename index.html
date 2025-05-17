@@ -135,7 +135,7 @@
                   </a>
                 </span>
                 <!-- Code Link. -->
-                <span class="link-block">
+                <!-- <span class="link-block">
                   <a href="https://github.com/WikiChao/VisAH"
                      target="_blank" class="external-link button is-normal is-rounded is-dark">
                     <span class="icon">
@@ -143,12 +143,54 @@
                     </span>
                     <span>Code</span>
                     </a>
-                </span>
+                </span> -->
               </div>
             </div>
             <div class="column has-text-centered">
               <!-- <h5 class="subtitle is-5">TL;DR</h5> -->
               <p><b>tl;dr:</b> We introduce a novel task: visually-guided acoustic highlighting, which aims to transform audio to deliver appropriate highlighting effects guided by the accompanying video.</p>
+            </div>
+            <div class="column has-text-centered">
+              <div class="box" style="background-color: #f8f9fa; margin-top: 1rem; border-left: 4px solid #3273dc; border-radius: 5px; box-shadow: 0 2px 5px rgba(0,0,0,0.05);">
+                <h5 class="subtitle is-5" style="color: #3273dc; margin-bottom: 15px; font-weight: 600;">📢 News and Resources</h5>
+                <div class="content">
+                  <ul style="list-style-type: none; padding: 0; margin-bottom: 10px;">
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+                      <span style="margin-right: 8px;">🎉</span>
+                      <div>
+                        <b style="color: #333;">Feb 2025:</b> Our paper is accepted to CVPR 2025!
+                      </div>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+                      <span style="margin-right: 8px;">🧪</span>
+                      <div>
+                        <b style="color: #333;">Mar 2025:</b> <a href="https://wikichao.github.io" style="color: #3273dc; text-decoration: underline;">Chao Huang</a> has reproduced all results and published the models!
+                      </div>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+                      <span style="margin-right: 8px;">🔊</span>
+                      <div>
+                        <a href="https://github.com/WikiChao/VisAH" style="color: #3273dc; text-decoration: underline;">Try our code</a> to highlight your own audio
+                      </div>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+                      <span style="margin-right: 8px;">📊</span>
+                      <div>
+                        <a href="https://drive.google.com/file/d/1lVqr7zBNaI1AupLz0X7dIWbiC8WULWP4/view?usp=sharing" style="color: #3273dc; text-decoration: underline;">Dataset</a> and <a href="https://drive.google.com/drive/folders/16gg4m3EDIdluJ_yonC9pc87dWZibSc9E?usp=sharing" style="color: #3273dc; text-decoration: underline;">model weights</a> are now available
+                      </div>
+                    </li>
+                    <li style="margin-bottom: 12px; display: flex; align-items: flex-start;">
+                      <span style="margin-right: 8px;">📝</span>
+                      <div>
+                        <a href="https://wikichao.github.io/VisAH_Gallery/" style="color: #3273dc; text-decoration: underline;">Gallery</a> showcasing our audio highlighting results along with the original movie clips
+                      </div>
+                    </li>
+                  </ul>
+                  <p style="font-size: 0.9rem; margin-top: 15px; color: #666; border-top: 1px solid #eaeaea; padding-top: 10px;">
+                    We thank <a href="https://wikichao.github.io" style="color: #3273dc;">Chao Huang</a> for reproducing the results and models. Click on the links above to access code, datasets, and models.
+                  </p>
+                </div>
+              </div>
             </div>
         </div>
       </div>
@@ -210,19 +252,19 @@
           <tbody>
             <tr>
               <td style="text-align: center">
-                <video src="static/subjective_mv/Input/5GyAcr1BrNA_001.mp4" controls></video>
+                <audio src="static/subjective_mv/Input/5GyAcr1BrNA_001.mp4" controls></audio>
               </td>
               <td style="text-align: center">
-                <video src="static/subjective_mv/LCE/5GyAcr1BrNA_001.mp4" controls></video>
+                <audio src="static/subjective_mv/LCE/5GyAcr1BrNA_001.mp4" controls></audio>
               </td>
               <td style="text-align: center">
-                <video src="static/subjective_mv/Ours/5GyAcr1BrNA_001.mp4" controls></video>
+                <audio src="static/subjective_mv/Ours/5GyAcr1BrNA_001.mp4" controls></audio>
               </td>
               <td style="text-align: center">
-                <video src="static/subjective_mv/GT/5GyAcr1BrNA_001.mp4" controls></video>
+                <audio src="static/subjective_mv/GT/5GyAcr1BrNA_001.mp4" controls></audio>
               </td>
             </tr>
-            <tr>In the input video, the speech is not highlighted properly, and our model resolve this.</tr>
+            <tr>In the input audio, the speech is not highlighted properly, and our model resolve this.</tr>
           </tbody>
         </table>
         </div>
@@ -261,19 +303,19 @@
                     <tbody>
                       <tr>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Input/AoSA32zQ754_000.mp4" controls></video>
+                          <audio src="static/subjective_mv/Input/AoSA32zQ754_000.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/LCE/AoSA32zQ754_000.mp4" controls></video>
+                          <audio src="static/subjective_mv/LCE/AoSA32zQ754_000.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Ours/AoSA32zQ754_000.mp4" controls></video>
+                          <audio src="static/subjective_mv/Ours/AoSA32zQ754_000.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/GT/AoSA32zQ754_000.mp4" controls></video>
+                          <audio src="static/subjective_mv/GT/AoSA32zQ754_000.mp4" controls></audio>
                         </td>
                       </tr>
-                      <tr>In this video, our model highlight the sound effect properly.</tr>
+                      <tr>In this audio, our model highlight the sound effect properly.</tr>
                     </tbody>
                   </table>
                 </div>
@@ -295,19 +337,19 @@
                     <tbody>
                       <tr>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Input/4_23t4NzAMk_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/Input/4_23t4NzAMk_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/LCE/4_23t4NzAMk_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/LCE/4_23t4NzAMk_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Ours/4_23t4NzAMk_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/Ours/4_23t4NzAMk_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/GT/4_23t4NzAMk_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/GT/4_23t4NzAMk_003.mp4" controls></audio>
                         </td>
                       </tr>
-                      <tr>In this video, our model highlight the speech properly.</tr>
+                      <tr>In this audio, our model highlight the speech properly.</tr>
                     </tbody>
                   </table>
                 </div>
@@ -330,19 +372,19 @@
                     <tbody>
                       <tr>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Input/5gf0f8WioTM_004.mp4" controls></video>
+                          <audio src="static/subjective_mv/Input/5gf0f8WioTM_004.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/LCE/5gf0f8WioTM_004.mp4" controls></video>
+                          <audio src="static/subjective_mv/LCE/5gf0f8WioTM_004.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Ours/5gf0f8WioTM_004.mp4" controls></video>
+                          <audio src="static/subjective_mv/Ours/5gf0f8WioTM_004.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/GT/5gf0f8WioTM_004.mp4" controls></video>
+                          <audio src="static/subjective_mv/GT/5gf0f8WioTM_004.mp4" controls></audio>
                         </td>
                       </tr>
-                      <tr>In this video, our model highlight the music properly.</tr>
+                      <tr>In this audio, our model highlight the music properly.</tr>
                     </tbody>
                   </table>
                 </div>
@@ -365,19 +407,19 @@
                     <tbody>
                       <tr>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Input/2vOhL_Hw-gg_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/Input/2vOhL_Hw-gg_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/LCE/2vOhL_Hw-gg_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/LCE/2vOhL_Hw-gg_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/Ours/2vOhL_Hw-gg_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/Ours/2vOhL_Hw-gg_003.mp4" controls></audio>
                         </td>
                         <td style="text-align: center">
-                          <video src="static/subjective_mv/GT/2vOhL_Hw-gg_003.mp4" controls></video>
+                          <audio src="static/subjective_mv/GT/2vOhL_Hw-gg_003.mp4" controls></audio>
                         </td>
                       </tr>
-                      <tr>In this video, our model highlight the sound effect properly.</tr>
+                      <tr>In this audio, our model highlight the sound effect properly.</tr>
                     </tbody>
                   </table>
                 </div>
@@ -455,7 +497,7 @@
     </table>
   </div>
   <p>
-    <i>In the following, the generated videos are from the <a href="https://openai.com/index/sora/">OpenAI Sora</a>, and the corresponding audios for videos are generated by <a href="https://yzxing87.github.io/Seeing-and-Hearing/">Seeing-and-Hearing</a>. </i>
+    <i>In the following, the audio is generated by <a href="https://yzxing87.github.io/Seeing-and-Hearing/">Seeing-and-Hearing</a>. </i>
   </p>
   <div class = "table-container">
     <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
@@ -472,10 +514,10 @@
       <tbody>
         <tr>
           <td style="text-align: center">
-            <video src="static/v2a/seeingandhearing/normalized_cloud-man.mp4" controls></video>
+            <audio src="static/v2a/seeingandhearing/normalized_cloud-man.mp4" controls></audio>
           </td>
           <td style="text-align: center">
-            <video src="static/v2a/seeingandhearing_ours/normalized_cloud-man.mp4" controls></video>
+            <audio src="static/v2a/seeingandhearing_ours/normalized_cloud-man.mp4" controls></audio>
             <p>Our method highlights the sound effects.</p>
           </td>
         </tr>
@@ -483,13 +525,12 @@
     </table>
   </div>
 </section> 
-
+<!-- 
 <section class="section">
   <div class="container is-max-desktop">
 
     <div class="columns is-centered">
 
-    <!-- Application. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">&#9758 Application: Real Video Refinement</h2>
@@ -503,55 +544,54 @@
 
       </div>
     </div>
-    <!-- / Application. -->
   </div>
   <p>
-    <i>The videos are sourced from the AudioCaps dataset. </i>
+    <i>The audios are sourced from the AudioCaps dataset. </i>
   </p>
   <div class = "table-container">
     <table class="table" align="center" style="table-layout: fixed;word-break:break-word">
       <thead>
         <tr>
           <td scope="col" width=300px>
-            <font color="061E61">Real Video</i></font>
+            <font color="061E61">Real Audio</i></font>
           </td>
           <td scope="col" width=300px>
-            <font color="061E61">Real Video + Our Model</font>
+            <font color="061E61">Real Audio + Our Model</font>
           </td>
         </tr>
       </thead>
       <tbody>
         <tr>
           <td style="text-align: center">
-            <video src="static/web_video/Raw/normalized_0G7rb74R-2A_30.mp4" controls></video>
+            <audio src="static/web_video/Raw/normalized_0G7rb74R-2A_30.mp4" controls></audio>
           </td>
           <td style="text-align: center">
-            <video src="static/web_video/Ours/normalized_0G7rb74R-2A_30.mp4" controls></video>
+            <audio src="static/web_video/Ours/normalized_0G7rb74R-2A_30.mp4" controls></audio>
             <p>Our method highlights the laughing sound to make the video more immersive.</p>
           </td>
         </tr>
         <tr>
           <td style="text-align: center">
-            <video src="static/web_video/Raw/normalized_IsUG5SKWNZA_30.mp4" controls></video>
+            <audio src="static/web_video/Raw/normalized_IsUG5SKWNZA_30.mp4" controls></audio>
           </td>
           <td style="text-align: center">
-            <video src="static/web_video/Ours/normalized_IsUG5SKWNZA_30.mp4" controls></video>
+            <audio src="static/web_video/Ours/normalized_IsUG5SKWNZA_30.mp4" controls></audio>
             <p>Our method highlights the ambient sound to make the video more immersive.</p>
           </td>
         </tr>
         <tr>
           <td style="text-align: center">
-            <video src="static/web_video/Raw/normalized_JdFmMw0zyKA_0.mp4" controls></video>
+            <audio src="static/web_video/Raw/normalized_JdFmMw0zyKA_0.mp4" controls></audio>
           </td>
           <td style="text-align: center">
-            <video src="static/web_video/Ours/normalized_JdFmMw0zyKA_0.mp4" controls></video>
+            <audio src="static/web_video/Ours/normalized_JdFmMw0zyKA_0.mp4" controls></audio>
             <p>Our method highlights the people in the video learning the seal's calls.</p>
           </td>
         </tr>
       </tbody>
     </table>
   </div>
-</section> 
+</section>  -->
 
 
 
