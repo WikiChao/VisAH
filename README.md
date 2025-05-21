@@ -20,6 +20,7 @@
 <a href="https://wikichao.github.io/VisAH_Gallery/"><img src="https://img.shields.io/static/v1?label=Demo&message=Gallery&color=blue" height=20.5></a>
 <a href="https://drive.google.com/file/d/1lVqr7zBNaI1AupLz0X7dIWbiC8WULWP4/view?usp=sharing"><img src="https://img.shields.io/static/v1?label=Data&message=Download&color=green" height=20.5></a>
 <a href="https://drive.google.com/drive/folders/16gg4m3EDIdluJ_yonC9pc87dWZibSc9E?usp=sharing"><img src="https://img.shields.io/static/v1?label=Model&message=Checkpoint&color=orange" height=20.5></a>
+<a href="https://huggingface.co/papers/2505.12154"><img src="https://img.shields.io/static/v1?label=Huggingface&message=Paper&color=blue" height=20.5></a>
 </h5> 
 
 ## 📋 Table of Contents
