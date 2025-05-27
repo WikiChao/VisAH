@@ -1,0 +1,57 @@
+# config.yaml
+model_name: MODEL_NAME  # Define the model name
+
+model:
+  name: Transformer
+  params:
+    in_channels: 768
+    num_heads: 16
+    d_head: 32
+    depth: 6
+    context_dim: 768
+
+data:
+  training:
+    batch_size: 12
+  testing:
+    batch_size: 4
+  validation:
+    num_samples: 100
+    batch_size: 4
+  num_workers: 4
+  num_time_frames: 10
+
+training:
+  max_epochs: 200
+  learning_rate: 0.0001
+  devices: [0]  # Use 0 for CPU or list like [0, 1] for multiple GPUs
+  strategy: ddp  # Options: ddp, ddp_find_unused_parameters_true, dp
+  enable_progress_bar: True
+  resume_from_checkpoint: null
+
+logging:
+  save_dir: /YOUR_PATH/${model_name}/logs
+  name: ${model_name}
+
+checkpointing:
+  dirpath: /YOUR_PATH/${model_name}/checkpoints
+  filename: "${model_name}-{epoch:02d}-{val_loss:.2f}"
+  save_top_k: 3
+  monitor: val_loss
+  mode: min
+
+progress_bar:
+  refresh_rate: 10
+
+testing:
+  checkpoint_path: /YOUR_PATH/${model_name}/checkpoints/${model_name}-epoch=199-val_loss=0.02.ckpt
+  output_dir: /YOUR_PATH/${model_name}/test_outputs
+  batch_size: 20
+  num_workers: 4
+  video_path: "input_video.mp4"  # Path to the input video file
+  audio_output_path: "output_audio.wav"  # Path to save the output audio
+  original_audio_output_path: "input_audio_trim.wav"  # Path to the original audio file
+  original_video_output_path: "input_video_trim.mp4"  # Path to the original video file
+  video_output_path: "output_video.mp4"  # Path to save the output video
+
+mode: test
