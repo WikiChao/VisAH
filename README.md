@@ -16,7 +16,7 @@
 
 <h5 align="center">
 <a href="https://wikichao.github.io/VisAH/"><img src="https://img.shields.io/static/v1?label=Project&message=Website&color=red" height=20.5></a>  
-<a href=""><img src="https://img.shields.io/badge/arXiv-VisAH-b31b1b.svg" height=20.5></a>
+<a href="https://arxiv.org/abs/2505.12154"><img src="https://img.shields.io/badge/arXiv-VisAH-b31b1b.svg" height=20.5></a>
 <a href="https://wikichao.github.io/VisAH_Gallery/"><img src="https://img.shields.io/static/v1?label=Demo&message=Gallery&color=blue" height=20.5></a>
 <a href="https://drive.google.com/file/d/1lVqr7zBNaI1AupLz0X7dIWbiC8WULWP4/view?usp=sharing"><img src="https://img.shields.io/static/v1?label=Data&message=Download&color=green" height=20.5></a>
 <a href="https://drive.google.com/drive/folders/16gg4m3EDIdluJ_yonC9pc87dWZibSc9E?usp=sharing"><img src="https://img.shields.io/static/v1?label=Model&message=Checkpoint&color=orange" height=20.5></a>
