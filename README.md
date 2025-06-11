@@ -98,7 +98,7 @@ We have prepared all data and features needed to reproduce the training and eval
 
 **Option 2: Full Dataset**
 - Contains everything in the base dataset plus extracted frames, separated audios, and original video clips
-- *Coming soon - please stay tuned*
+- Please check download links in ``dataset/dowload_links``
 
 
 **Directory structure**:
