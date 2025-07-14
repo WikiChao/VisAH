@@ -34,9 +34,11 @@
   - [1. Download "The Muddy Mix" Dataset](#1-download-the-muddy-mix-dataset)
     - [Download Options:](#download-options)
   - [2. Degradation Method](#2-degradation-method)
+  - [3. Hugging Face Hub](#3-hugging-face-hub)
 - [🗝️ Training](#️-training)
 - [✅ Evaluation](#-evaluation)
   - [🌎 Pretrained model](#-pretrained-model)
+  - [🌎 Hugging Face Hub Checkpoints](#-hugging-face-hub-checkpoints)
 - [🎯 Gallery](#-gallery)
 - [🚀 Inference Examples](#-inference-examples)
 - [❓ FAQ](#-faq)
@@ -47,6 +49,7 @@
 
 ## 📰 News
 
+* **\[2025.07]** 🚀 VisAH dataset (base & full) and model checkpoints are now available on the Hugging Face Hub.
 * **[2025.03]** 🔥🔥 Released training and evaluation codes for **VisAH**.
 * **[2025.02]** 🎉🎉 **VisAH** is accepted to **CVPR 2025**.
 
@@ -128,6 +131,36 @@ Muddy_Mix
 ### 2. Degradation Method
 We generated the dataset once for the experiments in our paper. However, you can generate additional data for augmentation using the example in ``preprocessing/Degradation_generation.py``.
 
+---
+
+### 3. Hugging Face Hub
+
+We now host both versions of our dataset on the Hugging Face Hub for easy download:
+
+* **Base Dataset**: [Hugging Face - Muddy_Mix Base](https://huggingface.co/datasets/ChaoHuangCS/Muddy_Mix)
+* **Full Dataset**: [Hugging Face - Muddy_Mix Full](https://huggingface.co/datasets/ChaoHuangCS/Muddy_Mix_base)
+
+You can also programmatically fetch the datasets:
+
+```python
+from huggingface_hub import snapshot_download
+
+# Base version
+snapshot_download(
+    repo_id="ChaoHuangCS/Muddy_Mix_base",
+    repo_type="dataset",
+    local_dir="visah/data/Muddy_Mix_base"
+)
+
+# Full version
+snapshot_download(
+    repo_id="ChaoHuangCS/Muddy_Mix",
+    repo_type="dataset",
+    local_dir="visah/data/Muddy_Mix"
+)
+```
+
+---
 
 ## 🗝️ Training
 
@@ -152,6 +185,21 @@ python run_model.py --config configs/main_config.yaml
 ### 🌎 Pretrained model 
 Download our pretrained model checkpoints from [here](https://drive.google.com/drive/folders/16gg4m3EDIdluJ_yonC9pc87dWZibSc9E?usp=sharing).
 
+### 🌎 Hugging Face Hub Checkpoints
+
+Our model checkpoints are also available on the Hugging Face Hub:
+
+* **VisAH Model**: [Hugging Face - VisAH Model](https://huggingface.co/ChaoHuangCS/VisAH)
+
+You can fetch them programmatically:
+
+```python
+snapshot_download(
+    repo_id="ChaoHuangCS/VisAH",
+    repo_type="model",
+    local_dir="visah/checkpoints"
+)
+```
 ## 🎯 Gallery
 
 Please refer to <a href="https://wikichao.github.io/VisAH_Gallery/" style="color: #3273dc; text-decoration: underline;">Gallery</a> that showcases audio highlighting results along with the original movie clips.
@@ -203,8 +251,9 @@ If you use this code for your research, please cite our work:
 ```
 @inproceedings{huang2025learning,
   title={Learning to Highlight Audio by Watching Movies},
-  author={Huang, Chao and Gao, Ruohan and Tsang, J. M. F. and Kurcius, Jan and Bilen, Cagdas and Xu, Chenliang and Kumar, Anurag and Parekh, Sanjeel},
-  booktitle={CVPR},
+  author={Huang, Chao and Gao, Ruohan and Tsang, JMF and Kurcius, Jan and Bilen, Cagdas and Xu, Chenliang and Kumar, Anurag and Parekh, Sanjeel},
+  booktitle={Proceedings of the Computer Vision and Pattern Recognition Conference},
+  pages={23925--23935},
   year={2025}
 }
 ```
